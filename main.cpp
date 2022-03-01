@@ -2,7 +2,8 @@
 #include "dynamicStack.h"
 using namespace std;
 
-void menu{
+void menu(){
+
 }
 
 int main()

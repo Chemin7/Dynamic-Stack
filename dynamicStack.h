@@ -2,10 +2,11 @@
 #define DYNAMICSTACK_H_INCLUDED
 #include <iostream>
 #include <string>
-#include <node.h>
+#include "node.h"
 
-class Stack {
+ class Stack {
     private:
+
         Node *top;
     public:
         Stack();
@@ -16,18 +17,19 @@ class Stack {
         bool isEmpty();
 
 
-        friend ostream& operator << (ostream&,Stack);
+        friend std::ostream& operator << (std::ostream&,Stack);
     };
 
-Stack::Stack()
-{
+    using namespace std;
+
+Stack::Stack() {
     top =NULL;
-}
+    }
 
 
 
 void Stack::push(int num) {
-    top = new Node(num,top)
+    top = new Node(num,top);
     }
 
 void Stack::pop() {
@@ -40,32 +42,28 @@ int Stack::getTop() {
     return top->data;
     }
 
-bool Stack::isEmpty()
-{
+bool Stack::isEmpty() {
     return top==NULL;
-}
+    }
 
 
-ostream& operator << (ostream& out,Stack s){
+std::ostream& operator << (std::ostream& out,Stack s) {
 
     Stack temp;
-    while (!s.isEmpty())
-    {
+    while (!s.isEmpty()) {
         temp.push(s.getTop());
         s.pop();
-    }
+        }
 
-    while (!temp.isEmpty())
-    {
+    while (!temp.isEmpty()) {
         int t = temp.getTop();
-        out << t << " ";
+        out << t <<endl;
         temp.pop();
-
-        // To restore contents of
-        // the original stack.
         s.push(t);
+        }
+
+    return out;
     }
-}
 
 
 #endif // DYNAMICSTACK_H_INCLUDED
