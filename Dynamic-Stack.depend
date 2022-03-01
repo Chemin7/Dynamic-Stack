@@ -10,3 +10,18 @@
 
 1646152296 c:\users\user\onedrive - universidad de guadalajara\2do sem\sed1\actividad 7\dynamic-stack\node.h
 
+1646165708 source:c:\users\usuario\documents\practicas\dynamic-stack\main.cpp
+	<iostream>
+	"dynamicStack.h"
+	"validate.h"
+
+1646166054 c:\users\usuario\documents\practicas\dynamic-stack\dynamicstack.h
+	<iostream>
+	<string>
+	"node.h"
+
+1646165079 c:\users\usuario\documents\practicas\dynamic-stack\node.h
+
+1646165667 c:\users\usuario\documents\practicas\dynamic-stack\validate.h
+	<string>
+
