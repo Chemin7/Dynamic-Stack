@@ -34,6 +34,7 @@
 		</Compiler>
 		<Unit filename="dynamicStack.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="node.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

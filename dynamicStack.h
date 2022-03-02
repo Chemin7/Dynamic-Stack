@@ -4,73 +4,78 @@
 #include <string>
 #include "node.h"
 
-class Stack
-{
-private:
-    int sizeStack;
-    Node *top;
-public:
-    Stack();
-    void push(int);
-    void pop();
-    int getTop();
+class Stack {
+    private:
+        Node *top;
+        int sizeStack;
+    public:
+        Stack();
+        void push(int);
+        void pop();
+        int getTop();
 
-    bool isEmpty();
-    void showStack();
-
-
-    friend std::ostream& operator << (std::ostream&,Stack);
-};
+        bool isEmpty();
+        void showStack();
+    };
 
 using namespace std;
 
-Stack::Stack()
-{
-    sizeStack = 0;
-    top =NULL;
-}
+Stack::Stack(): top(NULL), sizeStack(0) {}
 
 
 
-void Stack::push(int num)
-{
+void Stack::push(int num) {
     top = new Node(num,top);
     sizeStack++;
-}
 
-void Stack::pop()
-{
-    Node *temp= top;
-    top = top->next;
-    delete temp;
-    sizeStack--;
-}
+    }
 
-int Stack::getTop()
-{
+void Stack::pop() {
+    try {
+        if(isEmpty())
+            throw 0;
+        Node *temp= top;
+        top = top->next;
+        delete temp;
+        sizeStack--;
+        }
+    catch(int &exp) {
+        std::cerr<<"Pila vacia"<<endl;
+        system("pause");
+        }
+
+
+
+    }
+
+int Stack::getTop() {
     return top->data;
-}
+    }
 
-bool Stack::isEmpty()
-{
+bool Stack::isEmpty() {
     return top==NULL;
-}
+    }
 
-void Stack::showStack()
-{
+void Stack::showStack() {
     int ayuda,i;
-    if(!isEmpty())
-    {
+    Node* show = NULL;
+
+    if(!isEmpty()) {
+        show=top;
         system("cls");
 
         printf("\n\n\t\t%c%c%c%c%c  \n",201,205,205,205,187);
-        for(i=sizeStack; i>=0; i--)
-        {
-            if(i==sizeStack)
+        for(i=sizeStack-1; i>=0; i--) {
+            if(i==sizeStack-1)
                 printf("Tope->\t\t%c ",186,205);
             else
                 printf("\t\t%c ",186,205);
-            cout<<top->data;
+
+
+            cout<<show->data;
+            show=show->next;
+
+
             printf(" %c\n",186);
 
             if(i==0)
@@ -78,32 +83,12 @@ void Stack::showStack()
             else
                 printf("\t\t%c%c%c%c%c\n",204,205,205,205,185);
 
-        }
+            }
         //system("pause");
-    }
-}
-
-
-std::ostream& operator << (std::ostream& out,Stack s)
-{
-
-    Stack temp;
-    while (!s.isEmpty())
-    {
-        temp.push(s.getTop());
-        s.pop();
+        }
     }
 
-    while (!temp.isEmpty())
-    {
-        int t = temp.getTop();
-        out << t <<endl;
-        temp.pop();
-        s.push(t);
-    }
 
-    return out;
-}
 
 
 #endif // DYNAMICSTACK_H_INCLUDED
