@@ -49,15 +49,18 @@ void Stack::pop() {
     }
 
 int Stack::getTop() {
-    return top->data;
+
+        return top->data;
+
     }
 
 bool Stack::isEmpty() {
+
     return top==NULL;
     }
 
 void Stack::showStack() {
-    int ayuda,i;
+    int i;
     Node* show = NULL;
 
     if(!isEmpty()) {

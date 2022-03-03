@@ -33,10 +33,15 @@ void menu() {
                 s.pop();
                 break;
             case 3:
-                cout<<s.getTop();
+                (!s.isEmpty()) ? (cout<<"Tope: "<<s.getTop()<<endl) : cout<<"Pila vacia"<<endl;
+                system("pause");
+
                 break;
             case 4:
                 s.showStack();
+                break;
+            case 5:
+                exit(1);
                 break;
             default:
                 cout<<"Opcion invalida "<<endl;

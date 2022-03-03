@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1646189047 source:c:\users\user\onedrive - universidad de guadalajara\2do sem\sed1\actividad 7\dynamic-stack\main.cpp
+1646268015 source:c:\users\user\onedrive - universidad de guadalajara\2do sem\sed1\actividad 7\dynamic-stack\main.cpp
 	<iostream>
 	"dynamicStack.h"
 	"validate.h"
 
-1646188688 c:\users\user\onedrive - universidad de guadalajara\2do sem\sed1\actividad 7\dynamic-stack\dynamicstack.h
+1646268000 c:\users\user\onedrive - universidad de guadalajara\2do sem\sed1\actividad 7\dynamic-stack\dynamicstack.h
 	<iostream>
 	<string>
 	"node.h"
